@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style type="text/css">
+        #unsorted-list {
+            position: relative;
+            padding: 10px 20px 10px 20px;
+            width: auto;
+            height: auto;
+            border: 1px solid #000000;
+            color: #000000;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bolder;
+        }
+        
+        #selection-sort-list {
+            position: relative;
+            padding: 10px 20px 10px 20px;
+            width: auto;
+            height: auto;
+            background-color: #abacde;
+            color: #ffffff;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <h3> Unsorted List </h3>
+        <div id="unsorted-list">
+        </div>
+
+        <h3> Selection Sorted List </h3>
+        <div id="selection-sort-list">
+        </div>
+
+
+    </div>
+
+    <script type='text/javascript'>
+        
+      
+var selectionSort = function(array) {
+  for (var i = 0; i < array.length; i++) {
+ 
+    var minIndex = i;  // holds the index of the current lowest value in array[]
+ 
+    // search for the minimum value in the unsorted list
+    for (var j = i + 1; j < array.length; j++) {
+      if (array[j] < array[minIndex]) {
+        // the smallest number has been found
+        minIndex = j;
+      }
+    }
+ 
+    // swap minimum value to sort the array correctly 
+    if (minIndex != i) {
+      var temp = array[minIndex];
+      array[minIndex] = array[i];
+      array[i] = temp;
+    }
+  }
+}
+
+        var array = [345, 6, 345, 8, 1, 4, 98, 34 ,2364, 0, 34];
+        // Print initial unsorted array to <div id="unsorted-list">
+        document.getElementById("unsorted-list").innerHTML = array;
+
+        selectionSort(array);
+        // Print Array Selecton Sorted array to <div id="selection-sort-list">
+        document.getElementById("selection-sort-list").innerHTML = array;
+    </script>
+
+</body>
+
+</html>
