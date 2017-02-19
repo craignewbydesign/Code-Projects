@@ -66,8 +66,8 @@ var Palindrome = (function() {
 
 //*** Pubilc
     return { 
-        checkPalindrome: checkPlindrome,
-        isPalindrome: isPaindrome
+        checkPalindrome: checkPalindrome,
+        isPalindrome: isPalindrome
     };
 
 
