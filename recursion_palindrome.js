@@ -14,18 +14,18 @@ var Palindrome = (function() {
 //*** Private
 
     // Returns the first character of the string str
-    var firstCharacter = function(str) {
+    var _firstCharacter = function(str) {
         return str.slice(0, 1);
     };
 
     // Returns the last character of a string str
-    var lastCharacter = function(str) {
+    var _lastCharacter = function(str) {
         return str.slice(-1);
     };
 
     // Returns the string that results from removing the first
     // and last characters from str
-    var middleCharacters = function(str) {
+    var _middleCharacters = function(str) {
         return str.slice(1, -1);
     };
 
@@ -42,7 +42,7 @@ var Palindrome = (function() {
         // If the firstCharacter and lastCharacter are different,
         // It is NOT a palindrome.
         // return false;
-       if(firstCharacter(str)  !== lastCharacter(str)){
+       if(_firstCharacter(str)  !== _lastCharacter(str)){
            return false;
        }
         
@@ -52,7 +52,7 @@ var Palindrome = (function() {
         // 2.  Check if the first and last characters are equal,
         // 3.  Move in one character from the first and last character in the string,
         // 4.  Repeat the test if the characters are equal, etc...
-        return isPalindrome(middleCharacters(str));
+        return isPalindrome(_middleCharacters(str));
         
     };
 

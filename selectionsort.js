@@ -12,7 +12,7 @@ var selectionSort = (function() {
 //*** Private
 
     // swap minimum value to sort the array correctly 
-    var swap = function(array, firstIndex, secondIndex) {
+    var _swap = function(array, firstIndex, secondIndex) {
         var temp = array[firstIndex];
         array[firstIndex] = array[secondIndex];
         array[secondIndex] = temp;
@@ -20,7 +20,7 @@ var selectionSort = (function() {
 
 
     // find the minimum value in the unsorted list
-    var indexOfMinimum = function(array, startIndex) {
+    var _indexOfMinimum = function(array, startIndex) {
 
         var minValue = array[startIndex];
         var minIndex = startIndex;
@@ -41,8 +41,8 @@ var selectionSort = (function() {
 
         for (var i = 0; i < array.length - 1; i++) {
             startIndex = i; //holds the current starting index
-            minIndex = indexOfMinimum(array, startIndex);
-            swap(array, minIndex, startIndex);
+            minIndex = _indexOfMinimum(array, startIndex);
+            _swap(array, minIndex, startIndex);
 
         }
 
